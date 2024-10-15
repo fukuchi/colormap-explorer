@@ -25,7 +25,8 @@ public class SimulaHSB2 extends AbstractKnownColormap {
 		double ny = (float) (y * 2 - 1);
 		double dist = max(abs(ny), abs(nx));
 		double ang = Math.atan2(ny, nx);
-		double[] rgb = HSI.hsi2rgb(new double[] {ang, 1, dist});
+		double hue = ang * 3.0 / Math.PI;
+		double[] rgb = HSI.hsi2rgb(new double[] {hue, 1, dist});
 		return new Color((float)rgb[0], (float)rgb[1], (float)rgb[2]);
 	}
 
